@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * prinpint - print integer with plus symbol
  * @arguments: input string
@@ -15,12 +15,12 @@ int prinpint(va_list arguments, char *buf, unsigned int ibuf)
 	if (int_input < 0)
 	{
 		int_in = int_input * -1;
-		ibuf = handl_buf(buf, '-', ibuf);
+		ibuf = con_char(buf, '-', ibuf);
 	}
 	else
 	{
 		int_in = int_input;
-		ibuf = handl_buf(buf, '+', ibuf);
+		ibuf = con_char(buf, '+', ibuf);
 	}
 	int_temp = int_in;
 	div = 1;
@@ -31,7 +31,7 @@ int prinpint(va_list arguments, char *buf, unsigned int ibuf)
 	}
 	for (i = 0; div > 0; div /= 10, i++)
 	{
-		ibuf = handl_buf(buf, ((int_in / div) % 10) + '0', ibuf);
+		ibuf = con_char(buf, ((int_in / div) % 10) + '0', ibuf);
 	}
 	return (i + 1);
 }
