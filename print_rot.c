@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * print_rot - writes the str in ROT13
@@ -20,7 +20,7 @@ int print_rot(va_list arguments, char *buf, unsigned int ibuf)
 	if (str == NULL)
 	{
 		for (i = 0; nill[i]; i++)
-			ibuf = handl_buf(buf, nill[i], ibuf);
+			ibuf = con_char(buf, nill[i], ibuf);
 		return (6);
 	}
 	for (i = 0; str[i]; i++)
@@ -30,12 +30,12 @@ int print_rot(va_list arguments, char *buf, unsigned int ibuf)
 			if (str[i] == alf[j])
 			{
 				k = 1;
-				ibuf = handl_buf(buf, rot[j], ibuf);
+				ibuf = con_char(buf, rot[j], ibuf);
 				break;
 			}
 		}
 		if (k == 0)
-			ibuf = handl_buf(buf, str[i], ibuf);
+			ibuf = con_char(buf, str[i], ibuf);
 	}
 	return (i);
 }

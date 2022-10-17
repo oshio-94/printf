@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * prinhupx - prints a short decimal in hexadecimal
  * @arguments: The character to print
@@ -16,7 +16,7 @@ int prinhupx(va_list arguments, char *buf, unsigned int ibuf)
 
 	if (int_input == 0)
 	{
-		ibuf = handl_buf(buf, '0', ibuf);
+		ibuf = con_char(buf, '0', ibuf);
 		return (1);
 	}
 	if (int_input < 0)
@@ -36,7 +36,7 @@ int prinhupx(va_list arguments, char *buf, unsigned int ibuf)
 			first_digit = 1;
 		if (first_digit)
 		{
-			ibuf = handl_buf(buf, hexadecimal[i], ibuf);
+			ibuf = con_char(buf, hexadecimal[i], ibuf);
 			count++;
 		}
 	}
